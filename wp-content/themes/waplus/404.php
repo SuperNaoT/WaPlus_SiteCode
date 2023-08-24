@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: 和Plus：旧・新着情報一覧
+Template Name: 和Plus：企業理念
 */
 
   // 
@@ -10,14 +10,21 @@ Template Name: 和Plus：旧・新着情報一覧
   // *******************************************************
   // *******************************************************
 
+  // 
   // 当該固定ページ種別設定
   global $GB_menuPos;
   global $GB_page_flag;
 
-  $GB_menuPos     = 7;    // 経営支援
+  $GB_menuPos     = 99;    // 企業理念(1) 404 Page(99)
   $GB_page_flag   = 0;
 
+  // // 
+  // // 【WordPress・get_header】用引数設定
+  // $params       = [ 'GB_menuPos'     => $GB_menuPos,
+  //                   'GB_page_flag'   => $GB_page_flag ];
+
   // ヘッダー部の取込み
+  // get_header( null, $params );
   get_header( null );
 ?>
 
@@ -26,12 +33,13 @@ Template Name: 和Plus：旧・新着情報一覧
     <div class="main" id="mainArea">
 
       <?php
-        get_template_part( 'WaPlusCfg/contents/01_subPages/subPage', "07" );
+        get_template_part( 'WaPlusCfg/contents/404/subPage', "404" );
       ?>
 
     </div>    <!-- main -->
 
 <?php 
   // フッター部の取込み
+  // get_footer( null, $params );
   get_footer( null );
 ?>

@@ -19,6 +19,7 @@ Thumb.db
 /wp-content/plugins/wp-multibyte-patch/*
 /wp-content/plugins/index.php
 
+/wp-content/themes/work
 /wp-content/themes/twentytwentytwo
 /wp-content/themes/waplus/Thumb.db
 /wp-content/themes/waplus/.DS_Store

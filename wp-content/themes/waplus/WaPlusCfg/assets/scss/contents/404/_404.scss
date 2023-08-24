@@ -1,0 +1,112 @@
+@charset "utf-8";
+
+//
+// ***********************************************
+// ***********************************************
+// ***********************************************
+// ★ ４０４ページ
+// ***********************************************
+// @import "./../mainPage/ourPhilosophy";
+
+// 
+// ***********************************************
+// ★ お探しのページは見つかりませんでした
+// ***********************************************
+.mainContents {
+  
+  // 
+  // 横揺れ禁止
+  .main { width: 100%; }
+
+  @include mquery( "pc" ) {
+    #rollingTitlePage {
+      
+      // 
+      // 当該ページセクション高を仮設定しておく
+      // 当該ページの実高さは、デバイス画面高に応じて計算し設定している為、
+      // 初期ロードの際高さが無いと、フッター部分が最初に表示されてしまう。
+      height: 100vh;        // ********** MB/PC different!
+
+      .rollingTitle {
+        @include style-rollingTitle;
+      }    
+
+      .uline {
+        width: 50vw;        // ********** MB/PC different!
+        margin: 5vh 0 8vh 0;
+        border-bottom: 1px solid rgba( 3,3,3,0.3 );
+        border-bottom: 1px solid rgba(180, 194, 220, 1);
+      }
+
+      .page404Detail {
+        font-size: $pcDefaultFSize;        // ********** MB/PC different!
+        line-height: 1.6em;        // ********** MB/PC different!
+        color: #647C92;
+        background-color: rgba( 223,206,214,0.2 );
+        width: 40vw;        // ********** MB/PC different!
+        margin-left: 1vw;        // ********** MB/PC different!
+        padding: 20px 20px;        // ********** MB/PC different!
+        // border: 1px solid rgba( 100, 124, 126, 0.5 );
+        border-radius: 5px;
+        box-shadow: 0 0 12px rgba( 100,124,126,0.5 );
+      }
+
+      .sakuraImage  {
+        @include style-imageDispPos( "../../../../Images/bgImage_SakuraS.jpg", 65vh, 30vh );    // 85%
+      }
+    }
+  }
+  @include mquery( "mb" ) {
+    #rollingTitlePage {
+      height: 138vh;        // ********** MB/PC different!
+
+      .container {        // ********** MB/PC different!
+        // // 
+        // // ***** 20220321
+        // // 【Knowledge】＊＊＊＊＊
+        // // ※ アニメーションでの注意点！
+        // //  「GSAP等」子要素が画面外から画面内に左右から移動してくる場合、
+        // //   その親要素について、はみ出た部分に非表示を設定しないと、
+        // //   画面を横にスワップすると、画面がグニャグニャと動く。
+        // //   特に、モバイル用レスポンシヴ画面にて、ＰＣ画面用要素と共有していると、
+        // //   当現象が、モバイル用レスポンシヴ画面にて発生する！
+        overflow: hidden;
+      }
+
+      .rollingTitle {
+        @include style-rollingTitle;
+      }    
+
+      .uline {
+        width: 80vw;        // ********** MB/PC different!
+        margin: 5vh 0 8vh 0;
+        border-bottom: 1px solid rgba( 3,3,3,0.3 );
+        border-bottom: 1px solid rgba(180, 194, 220, 1);
+      }
+
+      .page404Detail {
+        font-size: $mbDefaultFSize;        // ********** MB/PC different!
+        font-weight: normal;      // bold;        // ********** MB/PC different!
+        line-height: $mbDefaultLineHeight;        // ********** MB/PC different!
+        color: #647C92;
+        background-color: rgba( 223,206,214,0.2 );
+        // width: 76vw;
+        width: 98%;        // ********** MB/PC different!
+        padding: 2.5vh 2vw;        // ********** MB/PC different!
+        // border: 1px solid rgba( 100, 124, 126, 0.5 );
+        border-radius: 5px;
+        box-shadow: 0 0 12px rgba( 100,124,126,0.5 );
+
+        // @include DEBUG-border( blue, dashed, 2px );
+
+      }
+      
+      // 
+      // メッセージ部イメージ画像表示書式   高さ　TOP位置 
+      .sakuraImage {
+        // @include style-imageDispPos( "../../../../Images/bgImage_SakuraS.jpg", 75%, 40vh );
+        @include style-imageDispPos( "../../../../Images/bgImage_SakuraS.jpg", 80%, 40vh );
+      }
+    }
+  }  
+}
