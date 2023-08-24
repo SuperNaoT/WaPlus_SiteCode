@@ -1,0 +1,468 @@
+@charset "utf-8";
+
+// 
+// ***********************************************
+// ★ 企業理念、詳細ページ設定
+// ***********************************************
+.ITWebSolContents {
+
+  @include style-navUnderLine( ".exLkFlg" );
+
+  // 
+  // 横揺れ禁止
+  .main { width: 100%; }
+
+  // 
+  // ＰＣ・モバイル共通定義
+  // ***********************************
+  #rollingTitlePage {
+
+    // 
+    // 当該ページセクション高を仮設定しておく
+    // 当該ページの実高さは、デバイス画面高に応じて計算し設定している為、
+    // 初期ロードの際高さが無いと、フッター部分が最初に表示されてしまう。
+    height: 100vh;
+
+    // // 
+    // // ***** 20220321
+    // // 【Knowledge】＊＊＊＊＊
+    // // ※ アニメーションでの注意点！
+    // //  「GSAP等」子要素が画面外から画面内に左右から移動してくる場合、
+    // //   その親要素について、はみ出た部分に非表示を設定しないと、
+    // //   画面を横にスワップすると、画面がグニャグニャと動く。
+    // //   特に、モバイル用レスポンシヴ画面にて、ＰＣ画面用要素と共有していると、
+    // //   当現象が、モバイル用レスポンシヴ画面にて発生する！
+    overflow: hidden;
+   
+    // for DEBUG circleO
+    // @include style-section;
+
+    // 
+    // rect形式画像3枚セットの位置決め用定義
+    position: relative;
+    top: 0;
+    left: 0;
+
+    .rollingTitle {
+      @include style-rollingTitle;
+    }    
+
+    .uline {
+      margin: 5vh 0 8vh 0;
+      border-bottom: 1px solid rgba( 3,3,3,0.3 );
+      border-bottom: 1px solid rgba(180, 194, 220, 1);
+    }
+
+    // 
+    // 開発・対応実績等、サブタイトル
+    // rollingTitlePage
+    .itWebDetail h2 {
+      display: inline-block;
+      line-height: 1.5em;
+      position: relative;
+      overflow: hidden;
+      text-decoration: none;      
+    }
+    .itWebDetail h2:after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: #333;
+      content: "";        
+    }
+
+    .sunShineImage  {
+      @include style-imageDispPos( "../../../../Images/ITWebSol/macOnDesk.jpg", 65vh, 30vh );
+    }
+
+  }
+
+  // 
+  // 事業実績説明セクション
+  #itWebPfm, #itWebHuman {
+
+    // // 
+    // // ***** 20220321
+    // // 【Knowledge】＊＊＊＊＊
+    // // ※ アニメーションでの注意点！
+    // //  「GSAP等」子要素が画面外から画面内に左右から移動してくる場合、
+    // //   その親要素について、はみ出た部分に非表示を設定しないと、
+    // //   画面を横にスワップすると、画面がグニャグニャと動く。
+    // //   特に、モバイル用レスポンシヴ画面にて、ＰＣ画面用要素と共有していると、
+    // //   当現象が、モバイル用レスポンシヴ画面にて発生する！
+    overflow: hidden;
+
+    @include DEBUG-border( red, dashed, 2px );
+
+    .mngDtlMsg {
+      // padding: 10vh 0 20vh 0;
+                                padding: 0;
+      @include mquery( "pc" ) { padding: 10vh 0 150px 0; }
+      z-index: 3;
+
+      @include DEBUG-border( blue, dashed, 2px );
+
+      // 
+      // 事業実績
+      .cthCopy {
+        @include style-cthCopy;
+        // 
+        // ローリングタイトル以外のセクション、タイトルトップマージンを広く変更   20221016
+        @include mquery( "mb" ) { margin-top: 80px; }
+        transform: translateX( -20% );
+      }
+
+      #forExample3 .andMoreBtn {
+        margin-left: 50%; 
+        @include mquery( "mb" ) { margin-top: 20%; }
+        @include mquery( "pc" ) { margin-top:  5%; }
+      } 
+
+      .forExample {
+
+        // 
+        // 顧客名：（株）ミルバルール
+        h3 {
+          display: inline-block;
+          color: #766B31;
+          font-size: calc( $pcDefaultSectionSubTitle*0.8 );
+          font-weight: normal;      // bold;
+          line-height: 1.5em;       // 2em;
+          position: relative;
+          margin-top: 2em;
+          margin-bottom: 0.5em;
+          overflow: hidden;
+          text-decoration: none;      
+        }
+        h3:after {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 1px;
+          background-color: #766B31;
+          content: "";        
+        }
+
+      // .forExample {
+
+        // @include DEBUG-border( purple, dashed, 2px );
+        @include DEBUG-border( black, dashed, 2px );
+
+        // font-size: 1vw !important;    // 1.2vw; 1.5vw
+        font-size: $pcDefaultFSize !important;
+        line-height: 2em;
+        letter-spacing: 1px;
+    
+        // padding: 10vh 0;
+        margin-left: 10vw;
+
+        table tr th {
+          padding-top: 20px;
+          font-size: calc( $pcDefaultSectionSubTitle*0.6 );
+        }
+
+        .uline {
+          // margin: 5vh 0 8vh 0;
+          margin: 5vh 0 5vh 0;
+          border-bottom: 1px solid rgba( 3,3,3,0.3 );
+          border-bottom: 1px solid rgba(180, 194, 220, 1);
+        }
+    
+        // 
+        // ■付きタイトル、経営支援、メッセージ詳細
+        // h2 {
+        h4 {
+          display: inline-block;
+          font-size: $pcDefaultSectionSubTitle;
+          font-weight: normal;      // bold;
+          line-height: 1.5em;
+          position: relative;
+          margin-top: 2em;
+          margin-bottom: 0.5em;
+          overflow: hidden;
+          text-decoration: none;      
+        }
+        h4:after {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 1px;
+          background-color: #333;
+          content: "";        
+        }
+
+        .cstLinkFlg h1 {
+          transition-duration: 0.5s;
+        }
+        .cstLinkFlg h1:hover {
+          transform: scale(1.05);
+        }
+    
+      }
+    } 
+
+    // 
+    // parallax効果の為の枠（親）原点指定
+    position: relative;    
+    background-color: rgba( 254, 244, 246, 0.5 );   // #FEF4F6
+  
+  }
+
+  #itWebHuman {
+    background-color: #fff;   // #FEF4F6
+    .myDeskTopImage  {
+      @include style-imageDispPos( "../../../../Images/ITWebSol/myDeskTop.jpg", 50%, 50vh );
+      z-index: 0;
+    }
+  }
+
+
+  // 
+  // ＰＣ用定義
+  // ***********************************
+  @mixin style_PC {
+    position: absolute;
+    top: 250vh; // 120vh 38%;
+    bottom: 0;
+    border-radius: 5px;
+    box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.5); // 0.35
+  }
+  @include mquery( "pc" ) {
+    // // 
+    // // 当該ページセクション高を仮設定しておく
+    // // 当該ページの実高さは、デバイス画面高に応じて計算し設定している為、
+    // // 初期ロードの際高さが無いと、フッター部分が最初に表示されてしまう。
+    // height: 100vh;
+
+    .uline {
+      width: 50vw;
+
+      // 
+      // 【Knowledge】＊＊＊＊＊
+      // ※ z-index が「単純」に機能しない場合
+      // 1．各要素は、HTMLコーディングでの出現順に上乗せされる
+      // 2．position:relative/absolute 指定すると、上位に表示される。
+      // 3．opacity/transform にて透過指定・アニメ化すると、上位に表示される。
+      // 
+      // ※ 解決策
+      // 1．最下位に置きたい要素の位置指定をしている、
+      // 2．最下位に置きたい要素をGSAP他でアニメ化している、
+      // ・・・こう言う場合は、
+      // 　　　その上位に配置したい要素に、
+      // 1．position: relative 指定を付加し、
+      // 2．明示的に「z-index」を下部配置要素と上位配置要素に指定する。
+      // 
+      position: relative;
+      z-index: 2;
+    }
+
+    // 
+    // ローリングタイトル内アンダーライン付きタイトル（）
+    .itWebDetail h2 {
+      font-size: calc( $pcDefaultSectionSubTitle*0.8 ) !important;      // 2022-12-20
+      margin-bottom: 0.5em;
+    }
+
+    #forExample1, #forExample2, #forExample3 {
+
+      @include DEBUG-border( lime, dashed, 2px );
+
+      transform: translateX( -40% );
+      opacity: 0;
+    }
+
+    // #forExample3 .forMB { opacity: 0; visibility: hidden; }
+    #forExample3 .forMB { display: none; }
+
+    .rectS { z-index: -1; }
+    #rectSPC1 {
+      @include style_rect;
+      @include style_PC;
+
+      right: 15%;
+      background-image: url("../../../../Images/management/SNS.jpg");  
+    }
+
+    #rectSPC2 {
+      @include style_rect;
+      @include style_PC;
+
+      right: 14%;
+      background-image: url("../../../../Images/ITWebSol/sourceCode.jpg");  
+    }
+    #rectSPC3 {
+      @include style_rect;
+      @include style_PC;
+
+      right: 13%;
+      background-image: url("../../../../Images/ITWebSol/nodeProject.png");  
+    }  
+    #rectSPC4 {  
+      @include style_rect;
+      @include style_PC;
+
+      right: 12%;
+      background-image: url("../../../../Images/ITWebSol/programmingLogo.jpg");
+    }
+  }
+
+  // 
+  // モバイル用定義
+  // ***********************************
+  @mixin style_MB {
+    width: 80%;
+    height: calc( 1vh*18 );
+    position: absolute;
+    // top: 50vh; // 100vh 80% 38%;
+    left: 10%;
+    border-radius: 5px;
+    box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.5); // 0.35
+    // opacity: 0.8;      
+  }
+  @include mquery( "mb" ) {
+    // // 
+    // // 当該ページセクション高を仮設定しておく
+    // // 当該ページの実高さは、デバイス画面高に応じて計算し設定している為、
+    // // 初期ロードの際高さが無いと、フッター部分が最初に表示されてしまう。
+    // height: 138vh;  
+
+    .uline {
+      width: 80vw;
+      margin: 5vh 0 5vh 0 !important;
+
+
+      // 
+      // 【Knowledge】＊＊＊＊＊
+      // ※ z-index が「単純」に機能しない場合
+      // 1．各要素は、HTMLコーディングでの出現順に上乗せされる
+      // 2．position:relative/absolute 指定すると、上位に表示される。
+      // 3．opacity/transform にて透過指定・アニメ化すると、上位に表示される。
+      // 
+      // ※ 解決策
+      // 1．最下位に置きたい要素の位置指定をしている、
+      // 2．最下位に置きたい要素をGSAP他でアニメ化している、
+      // ・・・こう言う場合は、
+      // 　　　その上位に配置したい要素に、
+      // 1．position: relative 指定を付加し、
+      // 2．明示的に「z-index」を下部配置要素と上位配置要素に指定する。
+      // 
+      position: relative;
+      z-index: 2;
+    }
+
+    // 
+    // 経営支援、メッセージ詳細
+    .itWebDetail h2 {
+      // font-size: 3vw;       // 2vh;
+      font-size: calc( $mbDefaultSectionSubTitle*0.8 ) !important;
+      margin-bottom: 1em;
+    }
+
+    #forExample1, #forExample2, #forExample3 {
+
+      @include DEBUG-border( lime, dashed, 2px );
+
+      transform: translateX( 40% );
+      opacity: 0;
+    }
+
+    .forExample {
+      h3 {
+        // font-size: 3.2vw !important;
+        font-size: $mbDefaultSectionSubTitle !important;
+        line-height: 1.5em !important;
+      }
+      #forExample1, #forExample2, #forExample3 {
+        // h2 {
+        h4 {
+          // font-size: 3vw !important;
+          font-size: $mbDefaultSectionSubTitle !important;
+          // margin-top: 0.2em;
+        }
+        table {
+          // font-size: 2.5vw;
+          font-size: $mbDefaultFSize;
+          line-height: $mbDefaultLineHeight;
+          tr th {
+            // font-size: $mbDefaultSectionSubTitle*0.9 !important;
+            font-size: $mbDefaultSectionTableTitle !important;
+
+          }
+          li {
+            .mbLineHgt {
+              line-height: $mbDefaultLineHeight
+            }
+          }  
+        }
+      }
+    }
+
+    // なんでここだけ？
+    // #forExample2 h2 { margin-top: 0 !important; }
+    #forExample2 h4 { margin-top: 0 !important; }
+
+    // #forExample3 .forPC { opacity: 0; visibility: hidden; }
+    #forExample3 .forPC { display: none; }
+
+    .rectS {
+      z-index: -1;
+    }
+    #rectSPC1 {  
+      @include style_rect;
+      @include style_MB;
+
+      background-image: linear-gradient(90deg,  rgba(255, 255, 255, 1   ) 0%,
+                                                rgba(255, 255, 255, 0.8 ) 25%,
+                                                rgba(255, 255, 255, 0.5 ) 50%,
+                                                rgba(255, 255, 255, 0.1 ) 75%,
+                                                rgba(255, 255, 255, 0.0 ) 100% ),
+                                        url( "../../../../Images/ITWebSol/programmingLogo.jpg" );
+    }
+    #rectSPC2 {  
+      @include style_rect;
+      @include style_MB;
+
+      background-image: linear-gradient(90deg,  rgba(255, 255, 255, 1   ) 0%,
+                                                rgba(255, 255, 255, 0.8 ) 25%,
+                                                rgba(255, 255, 255, 0.5 ) 50%,
+                                                rgba(255, 255, 255, 0.1 ) 75%,
+                                                rgba(255, 255, 255, 0.0 ) 100% ),
+                                        url( "../../../../Images/ITWebSol/nodeProject.png" );
+    }
+    #rectSPC3 {  
+      @include style_rect;
+      @include style_MB;
+
+      background-image: linear-gradient(90deg,  rgba(255, 255, 255, 1   ) 0%,
+                                                rgba(255, 255, 255, 0.8 ) 25%,
+                                                rgba(255, 255, 255, 0.5 ) 50%,
+                                                rgba(255, 255, 255, 0.1 ) 75%,
+                                                rgba(255, 255, 255, 0.0 ) 100% ),
+                                        url( "../../../../Images/ITWebSol/sourceCode.jpg" );
+    }
+    #rectSPC4 {  
+      @include style_rect;
+      @include style_MB;
+
+      background-image: linear-gradient(90deg,  rgba(255, 255, 255, 1   ) 0%,
+                                                rgba(255, 255, 255, 0.8 ) 25%,
+                                                rgba(255, 255, 255, 0.5 ) 50%,
+                                                rgba(255, 255, 255, 0.1 ) 75%,
+                                                rgba(255, 255, 255, 0.0 ) 100% ),
+                                        url( "../../../../Images/management/SNS.jpg" );
+    }
+  }
+}
+
+footer {
+  .siteFooter {
+    #footerNav {
+      border: 1px solid #f6f6f6;
+      border-radius: 5px;
+    }
+  }
+}

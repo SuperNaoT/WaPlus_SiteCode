@@ -1,0 +1,13 @@
+@charset 'utf-8';
+
+// 
+// スタイルシート共通基本定義実装
+@import "./../../common-style/styleCommon";
+
+// 
+// カテゴリページ用定義実装
+// @import "./../../common-style/archive/categoryPage";
+
+// 
+// カテゴリ：最新ニュース・お知らせページ用定義実装
+@import "./allCategory";

@@ -1,0 +1,505 @@
+@charset "utf-8";
+
+// 
+// ***********************************************
+// ★ 企業理念、詳細ページ設定
+// ***********************************************
+.manageSupContents {
+
+  // 
+  // 横揺れ禁止
+  .main { width: 100%; }
+
+  // 
+  // ＰＣ・モバイル共通定義
+  // ***********************************
+  #rollingTitlePage {
+
+    // // 
+    // // ***** 20220321
+    // // 【Knowledge】＊＊＊＊＊
+    // // ※ アニメーションでの注意点！
+    // //  「GSAP等」子要素が画面外から画面内に左右から移動してくる場合、
+    // //   その親要素について、はみ出た部分に非表示を設定しないと、
+    // //   画面を横にスワップすると、画面がグニャグニャと動く。
+    // //   特に、モバイル用レスポンシヴ画面にて、ＰＣ画面用要素と共有していると、
+    // //   当現象が、モバイル用レスポンシヴ画面にて発生する！
+    overflow: hidden;
+
+    // 
+    // 当該ページセクション高を仮設定しておく
+    // 当該ページの実高さは、デバイス画面高に応じて計算し設定している為、
+    // 初期ロードの際高さが無いと、フッター部分が最初に表示されてしまう。
+    height: 100vh;
+
+    // for DEBUG circleO
+    // @include style-section;
+
+    // 
+    // rect形式画像3枚セットの位置決め用定義
+    position: relative;
+    top: 0;
+    left: 0;
+
+    .rollingTitle {
+      @include style-rollingTitle;
+    }    
+
+    .uline {
+      margin: 5vh 0 8vh 0;
+      border-bottom: 1px solid rgba( 3,3,3,0.3 );
+      border-bottom: 1px solid rgba(180, 194, 220, 1);
+    }
+
+    // 
+    // 経営支援、メッセージ詳細
+    .mngSupDetail h2 {
+      display: inline-block;
+      line-height: 1.5em;
+      position: relative;
+      overflow: hidden;
+      text-decoration: none;      
+    }
+    .mngSupDetail h2:after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: #333;
+      content: "";        
+    }
+
+    .sunShineImage  {
+      @include style-imageDispPos( "../../../../Images/SunShine.jpg", 61vh, 30vh );
+    }
+
+  }
+
+  // 
+  // 事業実績説明セクション
+  #mngSupPfm {
+
+    @include DEBUG-border( lime, dashed, 2px );
+    
+    // // 
+    // // ***** 20220321
+    // // 【Knowledge】＊＊＊＊＊
+    // // ※ アニメーションでの注意点！
+    // //  「GSAP等」子要素が画面外から画面内に左右から移動してくる場合、
+    // //   その親要素について、はみ出た部分に非表示を設定しないと、
+    // //   画面を横にスワップすると、画面がグニャグニャと動く。
+    // //   特に、モバイル用レスポンシヴ画面にて、ＰＣ画面用要素と共有していると、
+    // //   当現象が、モバイル用レスポンシヴ画面にて発生する！
+    overflow: hidden;
+
+    .mngDtlMsg {
+      // padding: 10vh 0 20vh 0;
+                                padding:  0; // 0vh 0  20vh 0;      // 20221016 for Mobile
+      @include mquery( "pc" ) { padding: 10vh 0 150px 0; }
+
+      @include DEBUG-border( blue, dashed, 2px );
+
+      // 
+      // アニメーション画像より上に表示
+      z-index: 9;           // 3
+
+      // 
+      // 事業実績
+      .cthCopy {
+        @include style-cthCopy;
+        margin-bottom: 0;                      // 2022-12-24
+
+        // 
+        // ローリングタイトル以外のセクション、タイトルトップマージンを広く変更   20221016
+        @include mquery( "mb" ) { margin-top: 80px; }      // 2022-12-22
+        transform: translateX( -20% );
+
+        // border: 2px dashed red;
+      }
+
+      
+      .forExample {
+
+        // 
+        // 顧客名：（株）ミルバルール
+        h3 {
+          display: inline-block;
+          color: #766B31;
+          font-size: calc( $pcDefaultSectionSubTitle*0.8 );     // 2022-12-20
+          font-weight: normal;      // bold;
+          line-height: 1.5em;       // 2em;
+          position: relative;
+          // @include mquery( "pc" ) { margin-top: 2em; }
+          margin-bottom: 0.5em;
+          overflow: hidden;
+          text-decoration: none;      
+
+          // border: 2px dashed lime;
+
+        }
+        h3:after {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 1px;
+          background-color: #766B31;
+          content: "";        
+        }
+
+      // .forExample {
+
+                                  font-size: $pcDefaultFSize !important;
+        @include mquery( "mb" ) { font-size: $mbDefaultFSize !important; }
+        line-height: 2em;
+        letter-spacing: 1px;
+    
+        // padding: 10vh 0;
+        margin-left: 10vw;
+
+        // border: 2px dashed blue;
+
+        // // 
+        // // ***** 20220321
+        // // 【Knowledge】＊＊＊＊＊
+        // // ※ アニメーションでの注意点！
+        // //   子要素が画面外から画面内に左右から移動してくる場合、
+        // //   その親要素について、はみ出た部分に非表示を設定しないと、
+        // //   画面を横にスワップすると、画面がグニャグニャと動く。
+        // //   特に、モバイル用レスポンシヴ画面にて、ＰＣ画面用要素と共有していると、
+        // //   当現象が、モバイル用レスポンシヴ画面にて発生する！
+        // overflow: hidden;
+
+        table tr th {
+          padding-top: 20px;
+          // font-size: $mbDefaultSectionTableTitle;
+          font-size: calc( $pcDefaultSectionSubTitle*0.6 );      // 2022-12-20
+        }
+        .uline {
+          // margin: 5vh 0 8vh 0;
+          margin: 5vh 0 5vh 0;
+          border-bottom: 1px solid rgba( 3,3,3,0.3 );
+          border-bottom: 1px solid rgba(180, 194, 220, 1);
+          // border-bottom: 5px solid red;
+        }
+    
+        // 
+        // 事業・出店支援、メッセージ詳細
+        h2 {
+          display: inline-block;
+          font-size: $pcDefaultSectionSubTitle;
+          font-weight: normal;      // bold;
+          line-height: 1.5em;
+          position: relative;
+          margin-top: 2em;
+          margin-bottom: 0.5em;
+          overflow: hidden;
+          text-decoration: none;      
+        }
+        h2:after {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 1px;
+          background-color: #333;
+          content: "";        
+        }
+      }
+    } 
+
+    // 
+    // parallax効果の為の枠（親）原点指定
+    position: relative;    
+    background-color: rgba( 254, 244, 246, 0.5 );   // #FEF4F6
+  
+  }
+
+
+  // 
+  // ＰＣ用定義
+  // ***********************************
+  @mixin style_PC {
+    position: absolute;
+    top: 120vh; // 150vh 38%;
+    bottom: 0;
+    border-radius: 5px;
+    box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.5); // 0.35
+    // z-index: 0;
+  }
+  @include mquery( "pc" ) {
+    // // 
+    // // 当該ページセクション高を仮設定しておく
+    // // 当該ページの実高さは、デバイス画面高に応じて計算し設定している為、
+    // // 初期ロードの際高さが無いと、フッター部分が最初に表示されてしまう。
+    // height: 100vh;
+    
+    .uline {
+      width: 50vw;
+    }
+
+    // 
+    // 経営支援、メッセージ詳細
+    .mngSupDetail h2 {
+      font-size: calc( $pcDefaultSectionSubTitle*0.8 );     // 2022-12-20
+      margin-bottom: 0.5em;
+    }
+
+    #mngSupPfm {
+               z-index: -1;                      // 背景色付セクション
+      .rectS { z-index:  0; opacity: 1.0; }       // -1 0.8  アニメ付き背景画像
+      #forExample1, #forExample2, #forExample3 {
+        transform: translateX( -40% );
+        opacity: 0;
+
+        @include DEBUG-border( purple, dashed, 2px );
+      }
+    }
+
+    .forMB { opacity: 0; visibility: hidden; }
+    #rectSPC6 {
+      @include style_rect;
+      @include style_PC;
+
+      right: 13%;
+      right: 10%;
+      background-image: url("../../../../Images/management/ScheduleS.jpg");
+      // background-image: linear-gradient(90deg,  rgba(255, 255, 255, 0.6 ) 0%,
+      //                                           rgba(255, 255, 255, 0.4 ) 25%,
+      //                                           rgba(255, 255, 255, 0.2 ) 50%,
+      //                                           rgba(255, 255, 255, 0.0 ) 75%,
+      //                                           rgba(255, 255, 255, 0.0 ) 100% ),
+      //                                   url( "../../../../Images/management/ScheduleS.jpg" );
+    }
+    #rectSPC1 {
+      @include style_rect;
+      @include style_PC;
+
+      right: 11%;
+      background-image: url("../../../../Images/management/TogetherS.jpg");
+      // background-image: linear-gradient(90deg,  rgba(255, 255, 255,   1 ) 0%,
+      //                                           rgba(255, 255, 255, 0.8 ) 25%,
+      //                                           rgba(255, 255, 255, 0.6 ) 50%,
+      //                                           rgba(255, 255, 255, 0.4 ) 75%,
+      //                                           rgba(255, 255, 255, 0.0 ) 100% ),
+      //                                   url( "../../../../Images/management/Together.jpg" );
+    }
+    #rectSPC2 {
+      @include style_rect;
+      @include style_PC;
+
+      right: 12%;
+      background-image: url("../../../../Images/management/A-PopAdvS.jpg");  
+      // background-image: linear-gradient(90deg,  rgba(255, 255, 255,   1 ) 0%,
+      //                                           rgba(255, 255, 255, 0.8 ) 25%,
+      //                                           rgba(255, 255, 255, 0.6 ) 50%,
+      //                                           rgba(255, 255, 255, 0.4 ) 75%,
+      //                                           rgba(255, 255, 255, 0.0 ) 100% ),
+      //                                   url( "../../../../Images/management/A-PopAdv.jpg" );
+    }
+    #rectSPC3 {
+      @include style_rect;
+      @include style_PC;
+
+      right: 13%;
+      background-image: url("../../../../Images/management/JGBBFieldS.jpg");  
+      // background-image: linear-gradient(90deg,  rgba(255, 255, 255,   1 ) 0%,
+      //                                           rgba(255, 255, 255, 0.8 ) 25%,
+      //                                           rgba(255, 255, 255, 0.6 ) 50%,
+      //                                           rgba(255, 255, 255, 0.4 ) 75%,
+      //                                           rgba(255, 255, 255, 0.0 ) 100% ),
+      //                                   url( "../../../../Images/management/JGBBField.jpg" );
+    }  
+
+
+    #rectSPC4 {
+      @include style_rect;
+      @include style_PC;
+
+      right: 13%;
+      right: 10%;
+      background-image: url("../../../../Images/management/ichoFestivalNgtS.jpg");  
+      // background-image: linear-gradient(90deg,  rgba(255, 255, 255,   1 ) 0%,
+      //                                           rgba(255, 255, 255, 0.8 ) 25%,
+      //                                           rgba(255, 255, 255, 0.6 ) 50%,
+      //                                           rgba(255, 255, 255, 0.4 ) 75%,
+      //                                           rgba(255, 255, 255, 0.0 ) 100% ),
+      //                                   url( "../../../../Images/management/ichoFestivalNgt.jpg" );
+    }
+    #rectSPC5 {
+      @include style_rect;
+      @include style_PC;
+
+      right: 11%;
+      background-image: url("../../../../Images/management/ichoFestivalS.jpg");  
+      // background-image: linear-gradient(90deg,  rgba(255, 255, 255,   1 ) 0%,
+      //                                           rgba(255, 255, 255, 0.8 ) 25%,
+      //                                           rgba(255, 255, 255, 0.6 ) 50%,
+      //                                           rgba(255, 255, 255, 0.4 ) 75%,
+      //                                           rgba(255, 255, 255, 0.0 ) 100% ),
+      //                                   url( "../../../../Images/management/ichoFestivalS.jpg" );
+    }
+
+  }
+
+  // 
+  // モバイル用定義
+  // ***********************************
+  @mixin style_MB {
+    width: 80%;
+    height: calc( 1vh*18 );
+    position: absolute;
+    // top: 50vh; // 100vh 80% 38%;
+    left: 10%;
+    border-radius: 5px;
+    box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.5); // 0.35
+    // opacity: 0.8;      
+  }
+  @include mquery( "mb" ) {
+    // // 
+    // // 当該ページセクション高を仮設定しておく
+    // // 当該ページの実高さは、デバイス画面高に応じて計算し設定している為、
+    // // 初期ロードの際高さが無いと、フッター部分が最初に表示されてしまう。
+    // height: 138vh;  
+
+    // 
+    // 経営支援、メッセージ詳細
+    .mngSupDetail h2 {
+      font-size: calc( $mbDefaultSectionSubTitle*0.8 );      // 2022-12-20
+      margin-bottom: 1em;
+    }
+
+    #mngSupPfm {
+      #forExample1, #forExample2, #forExample3 {
+        transform: translateX( 40% );
+        opacity: 0;
+      }  
+    }
+
+    .forExample {
+      
+      .uline {
+        width: 80vw;
+        margin: 5vh 0 2vh 0 !important;
+      }
+
+      // h1 {
+      //   font-size: $mbDefaultSectionSubTitle !important;
+      //   line-height: 1.5em !important;
+
+      //   @include DEBUG-border( red, solid, 1px );
+      // }
+      // h2 {
+      //   font-size: $mbDefaultSectionSubTitle !important;
+      //   margin-top: 0.2em;
+      //   // @include DEBUG-border( lime, solid, 1px );
+      // }
+      h2 {
+        font-size: $mbDefaultSectionSubTitle !important;
+        line-height: 1.5em !important;
+        // border: 2px dashed red;
+      }
+      h3 {
+        font-size: $mbDefaultSectionSubTitle !important;
+        // margin-top: 0.2em;
+        // border: 2px dashed lime ;
+      }
+      table {
+        font-size: $mbDefaultFSize;
+        line-height: $mbDefaultLineHeight;
+        
+        tr th {
+          font-size: $mbDefaultSectionTableTitle !important;
+        }
+
+        li {
+          .mbLineHgt {
+            line-height: $mbDefaultLineHeight;
+          }
+        }
+      }
+    } 
+
+    // 
+    // トップセクション内イメージ画像３枚セット、初期設定は「非表示」
+    .forPC { opacity: 0; visibility: hidden; }
+    .rectS { z-index: -1; }
+    #rectSPC11 {  
+      @include style_rect;
+      @include style_MB;
+
+      background-image: linear-gradient(90deg,  rgba(255, 255, 255, 1   ) 0%,
+                                                rgba(255, 255, 255, 0.8 ) 25%,
+                                                rgba(255, 255, 255, 0.5 ) 50%,
+                                                rgba(255, 255, 255, 0.1 ) 75%,
+                                                rgba(255, 255, 255, 0.0 ) 100% ),
+                                        url( "../../../../Images/management/JGBBFieldS.jpg" );
+    }
+    #rectSPC12 {  
+      @include style_rect;
+      @include style_MB;
+
+      background-image: linear-gradient(90deg,  rgba(255, 255, 255, 1   ) 0%,
+                                                rgba(255, 255, 255, 0.8 ) 25%,
+                                                rgba(255, 255, 255, 0.5 ) 50%,
+                                                rgba(255, 255, 255, 0.1 ) 75%,
+                                                rgba(255, 255, 255, 0.0 ) 100% ),
+                                        url( "../../../../Images/management/A-PopAdvS.jpg" );
+    }
+    #rectSPC13 {  
+      @include style_rect;
+      @include style_MB;
+
+      background-image: linear-gradient(90deg,  rgba(255, 255, 255, 1   ) 0%,
+                                                rgba(255, 255, 255, 0.8 ) 25%,
+                                                rgba(255, 255, 255, 0.5 ) 50%,
+                                                rgba(255, 255, 255, 0.1 ) 75%,
+                                                rgba(255, 255, 255, 0.0 ) 100% ),
+                                        url( "../../../../Images/management/TogetherS.jpg" );
+    }
+    #rectSPC16 {  
+      @include style_rect;
+      @include style_MB;
+
+      background-image: linear-gradient(90deg,  rgba(255, 255, 255, 1   ) 0%,
+                                                rgba(255, 255, 255, 0.8 ) 25%,
+                                                rgba(255, 255, 255, 0.5 ) 50%,
+                                                rgba(255, 255, 255, 0.1 ) 75%,
+                                                rgba(255, 255, 255, 0.0 ) 100% ),
+                                        url( "../../../../Images/management/ScheduleS.jpg" );
+    }
+
+    #rectSPC14 {
+      @include style_rect;
+      @include style_MB;
+
+      background-image: linear-gradient(90deg,  rgba(255, 255, 255, 1   ) 0%,
+                                                rgba(255, 255, 255, 0.8 ) 25%,
+                                                rgba(255, 255, 255, 0.5 ) 50%,
+                                                rgba(255, 255, 255, 0.1 ) 75%,
+                                                rgba(255, 255, 255, 0.0 ) 100% ),
+                                        url( "../../../../Images/management/ichoFestivalS.jpg" );
+    }
+    #rectSPC15 {
+      @include style_rect;
+      @include style_MB;
+
+      background-image: linear-gradient(90deg,  rgba(255, 255, 255, 1   ) 0%,
+                                                rgba(255, 255, 255, 0.8 ) 25%,
+                                                rgba(255, 255, 255, 0.5 ) 50%,
+                                                rgba(255, 255, 255, 0.1 ) 75%,
+                                                rgba(255, 255, 255, 0.0 ) 100% ),
+                                        url( "../../../../Images/management/ichoFestivalNgtS.jpg" );
+    }
+  }
+}
+
+footer {
+  .siteFooter {
+    #footerNav {
+      border: 1px solid #f6f6f6;
+      border-radius: 5px;
+    }
+  }
+}

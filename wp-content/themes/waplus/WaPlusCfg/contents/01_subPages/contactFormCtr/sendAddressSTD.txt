@@ -1,0 +1,22 @@
+https://www.waplus-jpn.co.jp/saitohArc/
+info@waplus-jpn.co.jp
+6
+[noSelect     ]noSelectError
+[homeNewBuild ]n.tadokoro@waplus-jpn.co.jp
+[reformConsul ]n.tadokoro@waplus-jpn.co.jp
+[homeInspect  ]ntad.info21@gmail.com
+[earthQChk    ]ntad.info21@gmail.com
+[other        ]info@waplus-jpn.co.jp
+
+//
+// 1レコード目は、取得対象レコード数
+// contactForm.php では、データ部分６レコードの決め読込み
+// contactForm.php では、15バイト目から改行コード前迄をアドレスとして扱う
+//
+
+ページを行ったり来たりすると、
+複数のメールを送信するって？
+
+確認をしましょう！
+今回は回避策を入れたので、複数メールは飛ばない？
+それ実行・・・

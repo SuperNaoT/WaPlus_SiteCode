@@ -1,0 +1,186 @@
+@charset "utf-8";
+
+// 
+// ***********************************************
+// ★ 企業理念、詳細ページ設定
+// ***********************************************
+.cpProfileContents {
+
+  // 
+  // 横揺れ禁止
+  .main { width: 100%; }
+  #mainArea {
+
+    // 
+    // ***** 20220321
+    // 【Knowledge】＊＊＊＊＊
+    // ※ アニメーションでの注意点！
+    //  「GSAP等」子要素が画面外から画面内に左右から移動してくる場合、
+    //   その親要素について、はみ出た部分に非表示を設定しないと、
+    //   画面を横にスワップすると、画面がグニャグニャと動く。
+    //   特に、モバイル用レスポンシヴ画面にて、ＰＣ画面用要素と共有していると、
+    //   当現象が、モバイル用レスポンシヴ画面にて発生する！
+    overflow: hidden;
+
+  }
+
+  // 
+  // ＰＣ・モバイル共通定義
+  // ***********************************
+  #rollingTitlePage {
+
+    // 
+    // 当該ページセクション高を仮設定しておく
+    // 当該ページの実高さは、デバイス画面高に応じて計算し設定している為、
+    // 初期ロードの際高さが無いと、フッター部分が最初に表示されてしまう。
+    height: 100vh;
+
+    // @include DEBUG-border( blueviolet, dashed, 2px );
+
+    // 
+    // rect形式画像3枚セットの位置決め用定義
+    position: relative;
+    top: 0;
+    left: 0;
+
+    .rollingTitle {
+      @include style-rollingTitle;
+      padding-right: 30px;
+    }    
+
+    .uline {
+      margin: 5vh 0 8vh 0;
+      border-bottom: 1px solid rgba( 3,3,3,0.3 );
+      border-bottom: 1px solid rgba(180, 194, 220, 1);
+    }
+
+    // 
+    // 経営支援、メッセージ詳細
+    #detailInfo {
+      margin-left: 5vw;
+
+      // @include DEBUG-border( red, dashed, 2px );
+      
+      // 
+      // 経営支援、メッセージ詳細
+      h2 {
+        display: inline-block;
+        font-size: 1.3vw;
+        font-size: $pcDefaultSectionSubTitle;
+        font-weight: normal;      // bold;
+        line-height: 1.5em;
+        position: relative;
+        // margin-top: 2em;
+        margin-bottom: 0.5em;
+        overflow: hidden;
+        text-decoration: none;      
+      }
+      h2:after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: #333;
+        content: "";        
+      }
+
+      #forExample {
+
+        // font-size: $pcDefaultFSize;   // 16px
+        line-height: 2em;
+        letter-spacing: 1px;
+    
+        // padding: 10vh 0;
+        margin-left: 10vw;
+
+        // table ul li {
+        //   font-size: $pcOurServicesFSize;
+        // }
+
+        .uline {
+          margin: 5vh 0 8vh 0;
+          border-bottom: 1px solid rgba( 3,3,3,0.3 );
+          border-bottom: 1px solid rgba(180, 194, 220, 1);
+        }
+
+        transform: translateX( 40% );
+        opacity: 0;
+  
+      }
+
+    }
+  }
+
+  // 
+  // ＰＣ用定義
+  // ***********************************
+  @include mquery( "pc" ) {
+    // // 
+    // // 当該ページセクション高を仮設定しておく
+    // // 当該ページの実高さは、デバイス画面高に応じて計算し設定している為、
+    // // 初期ロードの際高さが無いと、フッター部分が最初に表示されてしまう。
+    height: 100vh;
+    
+    .businessTopImage  {
+      @include style-imageDispPos( "../../../../Images/DSC_Ohtemachi.jpg", 100%, 30vh );    // 120%
+      z-index: -1;
+    }
+
+    #forExample {
+      table {
+        font-size: 1vw;
+        // font-size: $pcDefaultFSize;
+        font-size: $pcDefaultSectionArtic;
+        line-height: 2em;
+      }  
+    }
+  }
+
+  // 
+  // モバイル用定義
+  // ***********************************
+  @include mquery( "mb" ) {
+    // // 
+    // // 当該ページセクション高を仮設定しておく
+    // // 当該ページの実高さは、デバイス画面高に応じて計算し設定している為、
+    // // 初期ロードの際高さが無いと、フッター部分が最初に表示されてしまう。
+    height: 138vh;  
+
+    .businessTopImage  {
+      @include style-imageDispPos( "../../../../Images/DSC_Ohtemachi.jpg", 80%, 30vh );
+      z-index: -1;
+    }
+
+    #detailInfo {
+      width: 90vw !important;
+
+      #forExample {
+        margin-left: 3vw !important;
+        width: 100% !important;
+
+        h2 {
+          font-size: $mbDefaultSectionSubTitle !important;
+          margin-top: 0.2em;
+        }
+        table {
+          // font-size: $mbDefaultFSize !important;
+          font-size: $mbDefaultSectionArtic !important;
+          line-height: 2em;
+          ul li {
+            font-size: $mbDefaultFSize !important;
+          }
+        }
+      } 
+    }
+  }
+}
+
+footer {
+  .siteFooter {
+    #footerNav {
+      border: 1px solid #f6f6f6;
+      border-radius: 5px;
+    }
+  }
+}

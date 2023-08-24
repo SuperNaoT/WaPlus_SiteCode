@@ -1,0 +1,289 @@
+@charset "utf-8";
+
+// 
+// ***********************************************
+// ★ 企業理念、詳細ページ設定
+// ***********************************************
+.iNekkaOLShopContents {
+
+  // 
+  // 横揺れ禁止
+  // .main { width: 100%; max-width: 1170px; margin: 0 auto; overflow: hidden; }
+  .main { width: 100%; overflow: hidden; }
+
+  // 
+  // ＰＣ・モバイル共通定義
+  // ***********************************
+  #rollingTitlePage {
+
+
+    // // 
+    // // ***** 20220321
+    // // 【Knowledge】＊＊＊＊＊
+    // // ※ アニメーションでの注意点！
+    // //   子要素が画面外から画面内に左右から移動してくる場合、
+    // //   その親要素について、はみ出た部分に非表示を設定しないと、
+    // //   画面を横にスワップすると、画面がグニャグニャと動く。
+    // //   特に、モバイル用レスポンシヴ画面にて、ＰＣ画面用要素と共有していると、
+    // //   当現象が、モバイル用レスポンシヴ画面にて発生する！
+    // overflow: hidden;
+    // // border: 2px dashed blueviolet;
+
+    // 
+    // 当該ページセクション高を仮設定しておく
+    // 当該ページの実高さは、デバイス画面高に応じて計算し設定している為、
+    // 初期ロードの際高さが無いと、フッター部分が最初に表示されてしまう。
+    height: 100vh;
+
+    // for DEBUG circleO
+    // @include style-section;
+
+    // 
+    // rect形式画像3枚セットの位置決め用定義
+    position: relative;
+    // top: 0;
+    // left: 0;
+
+    .rollingTitle {
+      @include style-rollingTitle;
+
+      // border: 2px dashed blueviolet;
+
+      @mixin style-tr {
+        display: block;
+
+        line-height: 1.5em;
+        position: relative;
+        overflow: hidden;
+        text-decoration: none;
+
+        cursor: pointer;
+      }
+      @mixin style-trAfter {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 110%;
+        height: 1px;
+        background-color: #333;
+        transform: translate(-100%, 0);
+        transition: transform 500ms;
+        transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.4s;
+        content: "";
+      }
+      #msgDetail {
+  
+        // i-nekka
+        @include style-navUnderLine( "#brandLinkURL1", "a" );
+
+        // ACestus
+        @include style-navUnderLine( "#brandLinkURL2", "a" );
+
+        // Creema / Minne
+        table tr th {
+                                    font-size: $pcDefaultSectionSubTitle;
+          @include mquery( "mb" ) { font-size: $mbDefaultSectionSubTitle; }
+        }
+      }
+    }
+
+    .uline {
+      margin: 5vh 0 8vh 0;
+      border-bottom: 1px solid rgba( 3,3,3,0.3 );
+      border-bottom: 1px solid rgba(180, 194, 220, 1);
+    }
+
+    .inekkaLargeLogo  {
+                                @include style-imageDispPos( "../../../../Images/i-nekka/creemaMinne_Images/bgImage_1750.jpg", 65vh, 30vh );    // 65%
+      @include mquery( "mb" ) { @include style-imageDispPos( "../../../../Images/i-nekka/creemaMinne_Images/bgImage_1750.jpg", 65vh, 25vh ); }   // 65%
+
+      background-position: bottom;
+    }
+  }
+
+  // 
+  // 事業実績説明セクション
+  #snsInformation {
+
+    @include style-navUnderLine( "#forExample1", "a" );
+    @include style-navUnderLine( "#forExample2", "a" );
+    @include style-navUnderLine( "#forExample3", "a" );
+
+    .brdDtlMsg {
+
+      padding: 3vh 0 20vh 0;
+
+      // 
+      // 事業実績
+      .cthCopy {
+        @include style-cthCopy;
+        transform: translateX( -20% );
+      }
+
+      .forExample {
+        // font-size:   1.2vw;     // 1vw 1.5vw
+        font-size: $pcDefaultFSize;
+        line-height: 2em;
+        letter-spacing: 1px;
+    
+        margin-left: 10vw;
+
+        // border: 2px dashed lime;
+        
+        #forExample1, #forExample2, #forExample3 {
+
+          // border: 2px dashed red;
+  
+          // メッセージ本体の基本設定取込み
+          @include style-msgDetail( calc( $pcDefaultSectionSubTitle*0.8 ) );    // $pcDefaultFSize
+          
+          // // サイドバー付を考慮した場合 ※１
+          // @include style-msgDetail( $pcDefaultSectionSubTitle*0.7 );    // $pcDefaultFSize
+
+        }  
+
+        .uline {
+          // margin: 5vh 0 8vh 0;
+          margin: 0 0 10px 0;
+          // border-bottom: 1px solid rgba( 3,3,3,0.3 );
+          border-bottom: 1px solid rgba(180, 194, 220, 1);
+        }
+
+        // 
+        // SNSロゴ
+        #sns1, #sns2, #sns3 {
+          position: relative;
+        }
+      } 
+    } 
+
+    // 
+    // parallax効果の為の枠（親）原点指定
+    position: relative;
+
+    background-color: rgba( 254, 244, 246, 0.5 );   // #FEF4F6
+  }
+
+  // 
+  // ＰＣ用定義
+  // ***********************************
+  @include mquery( "pc" ) {
+    // // 
+    // // 当該ページセクション高を仮設定しておく
+    // // 当該ページの実高さは、デバイス画面高に応じて計算し設定している為、
+    // // 初期ロードの際高さが無いと、フッター部分が最初に表示されてしまう。
+    // height: 100vh;
+
+    .uline {
+      width: 50vw;
+      margin-bottom: 20px !important;
+    }
+    .uline:not( :first-child ) {
+      margin: 50px 0 20px 0 !important;
+    }
+
+    // // サイドバー付を考慮した場合 ※１
+    // .forExample {
+    //   width: 55%;
+    //   border: 2px dashed red;
+    // }
+
+    #forExample1, #forExample2, #forExample3 {
+      transform: translateX( -40% );
+      opacity: 0;
+    }
+
+    // #sns2 > #twitterLogo {
+    #twitterLogo, #twitterLogo2, #instagramLogo {
+      position:absolute;
+      top: 30px !important;       // 10px -2.5vh
+      left: 380px;                // 23vw 26vw 17vw
+      width:  4vw;                // 5vw 70px;
+      height: 4vw;                // 5vw 70px;  
+      border-radius: 5px;
+      opacity: 0;
+      transform:translate( 100%, -300% ) rotateY(-150deg);
+    }
+
+    // // サイドバー付を考慮した場合 ※１
+    // #twitterLogo, #twitterLogo2, #instagramLogo {
+    //   position:absolute;
+    //   top: 10px !important;       // -2.5vh
+    //   left: 21vw;                 // 26vw 17vw
+    //   width:  3.5vw;                // 5vw 70px;
+    //   height: 3.5vw;                // 5vw 70px;  
+    //   border-radius: 5px;
+    //   opacity: 0;
+    //   transform:translate( 100%, -300% ) rotateY(-150deg);
+    // }
+    #sns1 > a:hover {
+      transition: transform 0.5s;
+      transform: scale(1.05);
+    }
+    #sns2 > a:hover {
+      transition: transform 0.5s;
+      transform: scale(1.05);
+    }
+    #sns3 > a:hover {
+      transition: transform 0.5s;
+      transform: scale(1.05);
+    }
+
+  }
+
+  // 
+  // モバイル用定義
+  // ***********************************
+  @include mquery( "mb" ) {
+    // // 
+    // // 当該ページセクション高を仮設定しておく
+    // // 当該ページの実高さは、デバイス画面高に応じて計算し設定している為、
+    // // 初期ロードの際高さが無いと、フッター部分が最初に表示されてしまう。
+    // height: 138vh;  
+
+    .uline {
+      width: 80vw;
+      margin: 30px 0 20px 0 !important;
+    }
+
+    .forExample {
+
+      #forExample1, #forExample2, #forExample3 {
+        font-size: calc( $mbDefaultSectionSubTitle*0.8 ) !important;
+        margin-left: 1vw !important;       // 3vw; 20px; 80px;
+        overflow: hidden;
+
+        transform: translateX( 40% );
+        opacity: 0;
+
+        // border: 2px dashed lime;
+      }
+      #forExample2 { margin-top: 20px; }
+
+      // 
+      // SNSロゴ
+      #twitterLogo, #twitterLogo2, #instagramLogo {
+        position:absolute;
+        top:  10px;                    //-2vh;
+        right: 15vw !important;        // 36vw;
+        width:  55px;                  // 15vw;
+        height: 55px;                  // 15vw;
+        border-radius: 5px;
+        opacity: 0;
+        transform:translate( 100%, -300% ) rotateY(-150deg);
+      }
+      #twitterLogo2, #instagramLogo {
+        top:  40px !important;         //-2vh;
+      }
+    } 
+  }
+}
+
+footer {
+  .siteFooter {
+    #footerNav {
+      border: 1px solid #f6f6f6;
+      border-radius: 5px;
+    }
+  }
+}

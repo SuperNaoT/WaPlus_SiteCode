@@ -1,0 +1,15 @@
+https://www.waplus-jpn.co.jp/
+info@waplus-jpn.co.jp
+6
+[noSelect     ]noSelectError
+[itWeb        ]n.tadokoro@waplus-jpn.co.jp
+[originalGoods]tadokoro@waplus-jpn.co.jp
+[management   ]info@waplus-jpn.co.jp
+[alliance     ]n.tadokoro@waplus-jpn.co.jp
+[other        ]info@waplus-jpn.co.jp
+
+//
+// 1レコード目は、取得対象レコード数
+// contactForm.php では、データ部分６レコードの決め読込み
+// contactForm.php では、15バイト目から改行コード前迄をアドレスとして扱う
+//

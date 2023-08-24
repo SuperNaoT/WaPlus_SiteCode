@@ -1,0 +1,83 @@
+@charset "utf-8";
+
+// 
+// ***********************************************
+// ***********************************************
+// ★ いーねっか、詳細ページ設定
+// ***********************************************
+// ***********************************************
+.iNekkaDetailContents {
+
+  // 
+  // 横揺れ禁止
+  .main { width: 100%; }
+
+  // 
+  // ＰＣ・モバイル共通定義
+  // ***********************************
+  #rollingTitlePage {
+
+    // border: 2px dashed blueviolet;
+
+    // 
+    // 当該ページセクション高を仮設定しておく
+    // 当該ページの実高さは、デバイス画面高に応じて計算し設定している為、
+    // 初期ロードの際高さが無いと、フッター部分が最初に表示されてしまう。
+    height: 100vh;
+
+    // // 
+    // // ***** 20220321
+    // // 【Knowledge】＊＊＊＊＊
+    // // ※ アニメーションでの注意点！
+    // //  「GSAP等」子要素が画面外から画面内に左右から移動してくる場合、
+    // //   その親要素について、はみ出た部分に非表示を設定しないと、
+    // //   画面を横にスワップすると、画面がグニャグニャと動く。
+    // //   特に、モバイル用レスポンシヴ画面にて、ＰＣ画面用要素と共有していると、
+    // //   当現象が、モバイル用レスポンシヴ画面にて発生する！
+    overflow: hidden;
+
+    // for DEBUG circleO
+    // @include style-section;
+
+    // 
+    // rect形式画像3枚セットの位置決め用定義
+    position: relative;
+    top: 0;
+    left: 0;
+
+    .rollingTitle {
+      @include style-rollingTitle;
+
+      // border: 2px dashed blueviolet;
+
+      @include style-navUnderLine( "#msgDetail", "a" );
+    }    
+
+    .uline {
+      margin: 5vh 0 8vh 0;
+      border-bottom: 1px solid rgba( 3,3,3,0.3 );
+      border-bottom: 1px solid rgba(180, 194, 220, 1);
+    }
+
+    .inekkaLargeLogo  {
+      @include style-imageDispPos( "../../../../Images/i-nekka/i-nekka_Edwardian_1024.jpg", 65vh, 30vh );    // 65%
+      background-position: bottom;
+    }
+  }
+
+  // 
+  // いーねっか・ギャラリーセクション
+  // 
+  // **************** ギャラリーセクション・共通部分
+  @include style-galleryElements;
+
+}
+
+footer {
+  .siteFooter {
+    #footerNav {
+      border: 1px solid #f6f6f6;
+      border-radius: 5px;
+    }
+  }
+}

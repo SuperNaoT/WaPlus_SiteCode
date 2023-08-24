@@ -1,0 +1,47 @@
+@charset "utf-8";
+
+// 
+// ***********************************************
+// ★ 企業理念、詳細ページ設定
+// ***********************************************
+// .postsContents {
+.newsContents {
+  @include style-categoryPage(
+    ".newsLargeLogo",
+    "../../../../Images/newsBlog/newsImage.jpg",
+    "../../../../Images/newsBlog/newsImageMB.jpg"
+  );
+}
+
+.blogContents {
+  @include style-categoryPage(
+    ".blogLargeLogo",
+    "../../../../Images/newsBlog/blogImage.png",
+    "../../../../Images/newsBlog/blogImageMB.jpg"
+  );
+}
+
+.techContents {
+  @include style-categoryPage(
+    ".techLargeLogo",
+    "../../../../Images/newsBlog/company_1280-1280.jpg",
+    "../../../../Images/newsBlog/company_900-1280MB.jpg"
+  );
+}
+
+.howToContents {
+  @include style-categoryPage(
+    ".howToLargeLogo",
+    "../../../../Images/newsBlog/rescue_1980-1521.png",
+    "../../../../Images/newsBlog/rescue_1980-1319.png"
+  );
+}
+
+footer {
+  .siteFooter {
+    #footerNav {
+      border: 1px solid #f6f6f6;
+      border-radius: 5px;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+@charset "utf-8";
+
+// 
+// ***********************************************
+// ★ 企業理念、詳細ページ設定
+// ***********************************************
+.postsContents {
+  @include style-categoryPage(
+    ".blogLargeLogo",
+    "../../../../Images/newsBlog/blogImage.png",
+    "../../../../Images/newsBlog/blogImageMB.jpg"
+  );
+}
+
+footer {
+  .siteFooter {
+    #footerNav {
+      border: 1px solid #f6f6f6;
+      border-radius: 5px;
+    }
+  }
+}

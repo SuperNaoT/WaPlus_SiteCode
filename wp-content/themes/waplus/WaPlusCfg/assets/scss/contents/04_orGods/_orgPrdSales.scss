@@ -1,0 +1,405 @@
+@charset "utf-8";
+
+// 
+// ***********************************************
+// ★ 企業理念、詳細ページ設定
+// ***********************************************
+.orgPrdSalesContents {
+
+  // 
+  // 横揺れ禁止
+  .main { width: 100%; }
+
+  // 
+  // [ ... i ]の下線アニメーション表示
+  @include style-navUnderLine( ".forPC" );
+  @include style-navUnderLine( ".forMB" );
+  @include style-navUnderLine( "#msgDetailPC" );
+  @include style-navUnderLine( "#msgDetailMB" );
+
+  // 
+  // ＰＣ・モバイル共通定義
+  // ***********************************
+  #rollingTitlePage {
+
+    // 
+    // 当該ページセクション高を仮設定しておく
+    // 当該ページの実高さは、デバイス画面高に応じて計算し設定している為、
+    // 初期ロードの際高さが無いと、フッター部分が最初に表示されてしまう。
+    // height: 100vh;
+
+    // // 
+    // // ***** 20220321
+    // // 【Knowledge】＊＊＊＊＊
+    // // ※ アニメーションでの注意点！
+    // //  「GSAP等」子要素が画面外から画面内に左右から移動してくる場合、
+    // //   その親要素について、はみ出た部分に非表示を設定しないと、
+    // //   画面を横にスワップすると、画面がグニャグニャと動く。
+    // //   特に、モバイル用レスポンシヴ画面にて、ＰＣ画面用要素と共有していると、
+    // //   当現象が、モバイル用レスポンシヴ画面にて発生する！
+    overflow: hidden;
+
+    // for DEBUG circleO
+    // @include style-section;
+
+    // 
+    // rect形式画像3枚セットの位置決め用定義
+    position: relative;
+    top: 0;
+    left: 0;
+
+    .rollingTitle {
+      @include style-rollingTitle;
+    }    
+
+    .uline {
+      margin: 5vh 0 8vh 0;
+      border-bottom: 1px solid rgba( 3,3,3,0.3 );
+      border-bottom: 1px solid rgba(180, 194, 220, 1);
+    }
+
+    .brdTitleDec h2 {
+      // padding-left: 7vw;
+      padding-left: 3vw;
+      transition-duration: 0.5s;
+    }
+    .brdTitleDec h2:hover {
+      transform: scale(1.05);
+    }
+
+    .flowerKnitImage  {
+      @include style-imageDispPos( "../../../../Images/i-nekka/i-nekka-roses.jpg", 65vh, 30vh );       // 65vh 30vh
+      // @include style-imageDispPos( "../../../../Images/i-nekka/i-nekka-roses.jpg", 62vh, 30vh, 15vw );       // 65vh 30vh
+      // margin-top: 20vh;
+    }
+  }
+
+  // 
+  // 事業実績説明セクション
+  #inekkaDtlExp, #ACestusDtlExp {
+
+    // // 
+    // // ***** 20220321
+    // // 【Knowledge】＊＊＊＊＊
+    // // ※ アニメーションでの注意点！
+    // //  「GSAP等」子要素が画面外から画面内に左右から移動してくる場合、
+    // //   その親要素について、はみ出た部分に非表示を設定しないと、
+    // //   画面を横にスワップすると、画面がグニャグニャと動く。
+    // //   特に、モバイル用レスポンシヴ画面にて、ＰＣ画面用要素と共有していると、
+    // //   当現象が、モバイル用レスポンシヴ画面にて発生する！
+    overflow: hidden;
+
+    // 
+    // parallax効果の為の枠（親）原点指定
+    position: relative;
+
+    // 
+    // いーねっか、アニメーション画像セット、初期設定（非表示）
+    // forPC
+    #rectSPC1 { opacity: 0; }
+    #rectSPC2 { opacity: 0; }
+    #rectSPC3 { opacity: 0; }
+    #rectSPC4 { opacity: 0; }
+
+    // forMB
+    // #inekkaLogoMB を調節
+    #rectSPC6 { opacity: 0; }
+    #rectSPC7 { opacity: 0; }
+    #rectSPC8 { opacity: 0; }
+    #rectSPC9 { opacity: 0; }
+
+    #rectSPC6 { opacity: 0.7; }
+    #rectSPC7 { opacity: 0.7; }
+    #rectSPC8 { opacity: 0.7; }
+    #rectSPC9 { opacity: 0.7; }
+
+    .brdDtlMsg {
+      padding: 10vh 0 20vh 0;
+      // @include mquery( "pc" ) { padding-top: 10vh; }
+
+      // 
+      // 事業実績
+      .cthCopy {
+        @include style-cthCopy;
+        transform: translateX( -20% );    
+        .inekkaLogo {
+          margin: 10px 40px;
+          width: 100px;
+        }
+      }
+      #inekkaLogoMB { opacity: 0; }
+      .inekkaLogoMB {
+        width: 40%;
+        max-width: 200px;
+        margin-left: 30%;
+        margin-bottom: 30px;
+        // border: 2px dashed red;
+      }
+
+      .forExample {
+
+        @include DEBUG-border( black, dashed, 2px );
+
+        // font-size:   1.2vw;     // 1vw 1.5vw
+        font-size: $pcDefaultFSize;
+        line-height: 2em;
+        letter-spacing: 1px;
+    
+        // padding: 10vh 0;
+        margin-left: 10vw;
+
+        .uline {
+          margin: 5vh 0 8vh 0;
+          border-bottom: 1px solid rgba( 3,3,3,0.3 );
+          border-bottom: 1px solid rgba(180, 194, 220, 1);
+        }
+
+        #forExample1, #forExample2, #forExample3, #forExample4,
+        #forExample6, #forExample7, #forExample8, #forExample9  {
+  
+          // メッセージ本体の基本設定取込み
+          @include style-msgDetail( $pcDefaultSectionArtic );
+
+          @include DEBUG-border( lime, dashed, 2px );
+        }
+
+        #forExample2 {
+          @include DEBUG-border( blue, dashed, 2px );
+          margin-bottom: 0 !important;
+        }
+
+      }
+    } 
+  }
+  #inekkaDtlExp {
+    background-color: rgba( 254, 244, 246, 0.5 );   // #FEF4F6
+  }
+  #ACestusDtlExp {
+    background-color: white;   // #FEF4F6
+  }
+
+
+  // 
+  // ＰＣ用定義
+  // ***********************************
+  @mixin style_PC {
+    position: absolute;
+    top: 10vh; // 120vh 150vh 38%;
+    bottom: 0;
+    border-radius: 5px;
+    box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.5); // 0.35
+    // z-index: 0;
+  }
+  @include mquery( "pc" ) {
+    // // 
+    // // 当該ページセクション高を仮設定しておく
+    // // 当該ページの実高さは、デバイス画面高に応じて計算し設定している為、
+    // // 初期ロードの際高さが無いと、フッター部分が最初に表示されてしまう。
+    // height: 100vh;
+
+    .ACestusBGImg  {
+      @include style-imageDispPos( "../../../../Images/ACestus/ACestus-bangkok1.jpg", 80vh, 30vh, 10vw );   // 60vh 20% 10vw
+      z-index: 0;
+    }
+
+    .uline {
+      width: 50vw;
+    }
+
+    // 
+    // 経営支援、メッセージ詳細
+    .brdTitleDec h2 {
+      // font-size: 1.3vw;
+      font-size: calc( $pcDefaultSectionSubTitle*0.8 );
+      margin-bottom: 0.5em;
+    }
+
+    .forExample ul {
+      margin: 15px 50px;
+      li {
+        // font-size: 1vw;       // 2.1vh; 1.5vw
+        // font-size: $pcDefaultFSize;
+        font-size: $pcOurServiceTitle;
+        line-height: 2em;
+      }
+    }
+
+    #forExample1, #forExample2, #forExample3, #forExample4 {
+      transform: translateX( -40% );
+      opacity: 0;
+    }
+
+    .forMB { display: none; }     // { opacity: 0; visibility: hidden; }
+    .rectS { z-index: -1; }       // -1
+    #rectSPC1 {
+      @include style_rectM;
+      @include style_PC;
+
+      left: 10%;
+      left: 20%;
+
+      background-image: url("../../../../Images/i-nekka/products/inekka_lace1S.jpg");
+    }
+    #rectSPC2 {
+      @include style_circleM;
+
+      position: absolute;
+      right: 50%;
+
+      background-image: url("../../../../Images/i-nekka/products/inekka_nitWreathS.jpg");
+    }
+    #rectSPC3 {
+      @include style_rectS;
+      @include style_PC;
+
+      right: 32%;
+
+
+      background-image: url("../../../../Images/i-nekka/products/inekka_ssk4BagS.jpg");  
+    }
+    #rectSPC4 {
+      @include style_rectL;
+      @include style_PC;
+
+      top: 75vh;      // 120vh;
+      right: 5%;
+      right: 15%;
+
+      background-image: url("../../../../Images/i-nekka/products/inekka_summerNitS.jpg");  
+    }  
+  }
+
+  // 
+  // モバイル用定義
+  // ***********************************
+  @mixin style_MB {
+    position: absolute;
+    top: 200vh;       // 155vh 120vh;
+    bottom: 0;
+    // left: 10%;
+
+    // width: 80%;
+    // height: calc( 1vh*18 );
+    // top: 50vh; // 100vh 80% 38%;
+    border-radius: 5px;
+    box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.5); // 0.35
+    // opacity: 0.8;      
+  }
+  @include mquery( "mb" ) {
+    // // 
+    // // 当該ページセクション高を仮設定しておく
+    // // 当該ページの実高さは、デバイス画面高に応じて計算し設定している為、
+    // // 初期ロードの際高さが無いと、フッター部分が最初に表示されてしまう。
+    // height: 138vh;  
+
+    .ACestusBGImg  {
+      @include style-imageDispPos( "../../../../Images/ACestus/ACestus-bangkok1.jpg", 60vh, 30vh );     // 40% 30%
+      z-index: 0;
+    }
+
+    .uline {
+      width: 80vw;
+      margin: 5vh 0 5vh 0 !important;
+    }
+
+    // 
+    // Mobile表示時「Aphrodite Cestus:【改行】クロコダイル」
+    .cthCopy {
+      line-height: 1.5em !important;
+    }
+
+    // 
+    // ■付き、「いーねっか」「AphroditeCestus」ブランドリンク
+    .brdTitleDec h2 {
+      // font-size: 3vw;       // 2vh;
+      font-size: $mbDefaultSectionSubTitle;
+      margin-bottom: 1em;
+      padding-left: 0 !important;
+    }
+
+    .forExample ul {
+      margin: 15px 20px;
+      li {
+        font-size:  2.8vw;    // 3vw; 1.5vw
+        font-size: $mbDefaultFSize;
+        font-size: $mbOurServiceTitle;
+        line-height: 2em;
+        line-height: 1.8em;
+      }
+    }
+
+    .forExample {
+      // h1 {
+      //   font-size: 3.2vw !important;
+      // }
+      h2 {
+        // font-size: 3vw !important;
+        font-size: $mbDefaultSectionSubTitle !important;
+        margin-top: 0.2em;
+      }
+      #forExample6, #forExample7, #forExample8, #forExample9  {
+        // font-size: 2.8vw !important;
+        // font-size: $mbDefaultFSize !important;
+        font-size: $mbDefaultSectionArtic !important;
+        margin-left: 1vw !important;       // 3vw; 20px; 80px;
+        margin-left: 0;
+
+        transform: translateX( 40% );
+        opacity: 0;
+  
+      }
+
+    } 
+
+    // 
+    // トップセクション内イメージ画像３枚セット、初期設定は「非表示」
+    .forPC { display: none; }     // { opacity: 0; visibility: hidden; }
+    .rectS { z-index: -1; }
+
+    #rectSPC6 {
+      @include style_rectM;
+      @include style_MB;        // absolute; top: 200vh;
+
+      top: 230vh;
+      left: 10%;
+
+      background-image: url("../../../../Images/i-nekka/products/inekka_lace1S.jpg");
+    }
+    #rectSPC7 {
+      @include style_circleM;
+
+      position: absolute;
+      top: 220vh;
+      right: 40%;
+
+      background-image: url("../../../../Images/i-nekka/products/inekka_nitWreathS.jpg");
+    }
+    #rectSPC8 {
+      @include style_rectS;
+      @include style_MB;
+
+      top: 190vh;
+      right: 30%;
+
+      background-image: url("../../../../Images/i-nekka/products/inekka_ssk4BagS.jpg");  
+    }
+    #rectSPC9 {
+      @include style_rectL;
+      @include style_MB;
+
+      top: 130vh;      // 75vh;      // 120vh;
+      right: 5%;
+
+      background-image: url("../../../../Images/i-nekka/products/inekka_summerNitS.jpg");  
+    }  
+  }
+}
+
+footer {
+  .siteFooter {
+    #footerNav {
+      border: 1px solid #f6f6f6;
+      border-radius: 5px;
+    }
+  }
+}

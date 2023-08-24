@@ -1,0 +1,13 @@
+@charset 'utf-8';
+
+// 
+// スタイルシート共通基本定義実装
+@import "./../../common-style/styleCommon";
+
+// 
+//  IT WEB ソリューションページ用定義実装
+@import "./ITWebSolPage";
+
+// 
+//  IT WEB ソリューション、実績詳細ページ用定義実装
+@import "./ITWebSolEng";
