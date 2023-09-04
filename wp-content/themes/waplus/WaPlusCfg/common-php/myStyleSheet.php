@@ -54,7 +54,7 @@
       // 「投稿ページ（single）」
       // 「投稿ページ（archive）」
       // } else if ( is_archive() )  {
-      if ( is_single() || is_archive() )  {
+      if ( is_single() || is_archive() || is_search() )  {
 
         // echo "　Ⅰ<br>";
 
@@ -104,7 +104,7 @@
             $src = get_template_directory_uri().'/WaPlusCfg/assets/scss/contents/07_08_category/style.min.css';
             // CSSファイル取込実行
             wp_enqueue_style( $handle, $src, $deps, $ver, $media );
-          } else if ( is_archive() )  {
+          } else if ( is_archive() || is_search() )  {
 
             // ハンドル名（識別要の文字列）.トップページ表示、個別定義用
             $handle = 'archive_css';

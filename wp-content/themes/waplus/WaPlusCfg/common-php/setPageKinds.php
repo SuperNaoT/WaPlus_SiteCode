@@ -171,6 +171,14 @@
             $galleryFlg  = "";
             break;
 
+          // 投稿記事検索結果ページ向け設定
+          case 405:
+            $titleMsg = "投稿記事 | 検索結果をご案内致します |";
+            $descriptMsg = "「ご興味のある投稿記事」検索結果です。　ご希望に有っていると嬉しいのですが・・・";
+            $pageWrapper = "searchResultContents";
+            $galleryFlg  = "";
+            break;
+
           // その他ページ向け設定
           default:
             $titleMsg    = "笑顔創造 | We will change charms much more! |";

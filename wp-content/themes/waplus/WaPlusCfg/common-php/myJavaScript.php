@@ -149,7 +149,7 @@ if ( ! is_admin() ) {
         //   ☛ 【JQuery】取込み
         // **************************************************
         if ( is_page( '11_contactf' ) || is_page( '05_inekka' ) || is_page( '06_acestus' ) ||
-             is_single()              || is_archive() )  {
+             is_single()              || is_archive()           || is_search()                )  {
 
           // echo "<br> >>>>> prepare jQuery Library ! <br>";
 
@@ -341,7 +341,8 @@ if ( ! is_admin() ) {
                     is_category( $DEF_catName_blog  ) ||
                     is_category( $DEF_catName_tech  ) ||
                     is_category( $DEF_catName_howTo ) ||
-                    is_archive (                    )   )  {
+                    is_archive (                    ) ||
+                    is_search  (                    )    )  {
 
           // ホームページ・トップページ表示制御用Scriptの読み込み
           // ハンドル名（識別要の文字列）.
