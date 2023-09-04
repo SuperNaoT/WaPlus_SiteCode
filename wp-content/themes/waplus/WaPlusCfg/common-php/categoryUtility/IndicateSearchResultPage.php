@@ -13,6 +13,9 @@
 <!--  -->
 <?php
 
+// echo "<br><br><br><br>";
+// echo ">>>>> IndicateSearchResultPage.php<br>";
+
 	//   
 	// グローバル変数定義ファイル
   require( get_template_directory() . '/WaPlusCfg/common-php/globalVariables.php' );
@@ -29,9 +32,6 @@
     $cthCopyStr = $args_cthCopyMB;
   }
   $error_flag = 0;
-
-  // echo "<br><br><br><br>";
-  // echo ">>>>> IndicateSearchResultPAGE.php<br>";
 ?>
 
       <!--  -->

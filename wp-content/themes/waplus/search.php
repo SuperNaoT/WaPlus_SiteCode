@@ -54,7 +54,7 @@ Template Name: 投稿リスト表示ページ用基本テンプレート
     <span>r</span>
     <span>c</span>
     <span>h</span>　
-    <span>r</span>
+    <span>R</span>
     <span>e</span>
     <span>s</span>
     <span>u</span>
@@ -67,7 +67,7 @@ Template Name: 投稿リスト表示ページ用基本テンプレート
     <span>r</span>
     <span>c</span>
     <span>h</span><br>
-    <span>r</span>
+    <span>R</span>
     <span>e</span>
     <span>s</span>
     <span>u</span>
@@ -87,7 +87,9 @@ Template Name: 投稿リスト表示ページ用基本テンプレート
     <!-- ************************************************************ -->
     <!-- ************************************************************ -->
     <?php
-   
+
+      // echo " >>>>> search.php Ⅰ<br>";
+
       // 
       // OFFICIAL version!
       get_template_part( '/WaPlusCfg/common-php/categoryUtility/IndicateSearchResultPAGE' );
