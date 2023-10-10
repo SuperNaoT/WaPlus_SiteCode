@@ -79,7 +79,7 @@ Template Name: 和Plus：オリジナル商品販売・いーねっか！
                     「手に取って頂けたとき、思わず笑顔が広がる様に」<br><br>
                     　こんな気持ちを込めて、一つ一つ丁寧に手作りしています。<br>
                     　一瞬でも、気持ちが華やいで頂けたらとても嬉しい・・・<br><br>
-                    　　　　　　　　　　<a href="<?php // echo esc_url( home_url('05_inekkaec' ) ); ?>">[ オンラインショップのご案内 ... <i class="fas fa-info" style="color: blue;"></i> <i class="fas fa-link extLnkIcon colBlue"></i> ]</a>
+                    　　　　　　　　　　<a href="<?php echo esc_url( home_url('05_inekkaec' ) ); ?>">[ オンラインショップのご案内 ... <i class="fas fa-info" style="color: blue;"></i> <i class="fas fa-link extLnkIcon colBlue"></i> ]</a>
                   </p>
                   <div class="uline"></div>
                   <p>
