@@ -506,15 +506,16 @@ function calcRollingSecHeight() {
   // 文字サイドのボトム位置と、補完画像のボトム位置を比較し、
   // 低い方を、セクション高の計算値に採用する。
   if ( iWk1 > iWrk )  { iWrk = iWk1; }
-                        iWrk = Math.round( iWrk ) + secBottomMargin;
+                        // iWrk = Math.round( iWrk ) + secBottomMargin;
                         // iWrk = Math.round( iWrk );
   
-  // // 
-  // // Mobile時、高さ延長
-  // if ( document.querySelector( 'body' ).classList.contains( 'MOBILE' ) )  {
-  //   // iWrk = iWrk - 188;
-  //   // iWrk = iWrk - 138;
-
+  // 
+  // Mobile時、高さ延長
+  if ( document.querySelector( 'body' ).classList.contains( 'MOBILE' ) )  {
+    // iWrk = iWrk - 600;
+    // iWrk = iWrk - 188;
+    iWrk = iWrk - 20;
+  }
   // // 
   // // PC時、セクション高調整
   // } else  {
@@ -641,6 +642,7 @@ function calcEachSecHeight( secNo ) {
   // 
   // 当該セクション、高さ設定
   document.getElementById( secElms[secNo]["sName"] ).style.height = iWrk + secBottomMargin + "px";
+  // document.getElementById( secElms[secNo]["sName"] ).style.height = iWrk + "px";
 
   // // console.log( `    ? This Section HEIGHT[ ${topBottomSpace + sTtlHgt + intervalSpace + cCpyHgt + intervalSpace + dMsgHgt + topBottomSpace + "px"} ]\n`)
   // console.log( `    ? This Section HEIGHT[ ${topBottomSpace + sTtlHgt + intervalSpace + cCpyHgt + intervalSpace + dMsgHgt[0]+ dMsgHgt[2]+ dMsgHgt[3] + "px"} ]\n`);
