@@ -26,7 +26,7 @@
 
 // ** データベース設定 - この情報はホスティング先から入手してください。 ** //
 /** WordPress のためのデータベース名 */
-define( 'DB_NAME', 'wp_waplus' );
+define( 'DB_NAME', 'wp_waplusdev' );
 
 /** データベースのユーザー名 */
 define( 'DB_USER', 'root' );

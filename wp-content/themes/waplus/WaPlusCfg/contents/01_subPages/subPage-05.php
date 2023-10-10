@@ -7,6 +7,25 @@ Template Name: 和Plus：オリジナル商品販売・いーねっか！
   global $GB_RELLAX_FLAG;
 ?>
 
+<!-- 
+<div class="areaChk" >000</div>
+<div class="areaChk1">100</div>
+<div class="areaChk2">200</div>
+<div class="areaChk3">300</div>
+<div class="areaChk4">400</div>
+<div class="areaChk5">500</div>
+<div class="areaChk6">600</div>
+<div class="areaChk7">700</div>
+<div class="areaChk8">800</div>
+<div class="areaChk9">900</div>
+<div class="areaChk10">1000</div>
+<div class="areaChk11">1100</div>
+<div class="areaChk12">1200</div>
+<div class="areaChk13">1300</div>
+<div class="areaChk14">1400</div>
+<div class="areaChk15">1500</div>
+ -->
+
       <!--  -->
       <!-- メインコンテンツ内、オリジナル商品販売・いーねっか -->
       <section id="rollingTitlePage">
@@ -59,8 +78,18 @@ Template Name: 和Plus：オリジナル商品販売・いーねっか！
                     「素敵な大人の女性を演出したい、一助となりたい」<br>
                     「手に取って頂けたとき、思わず笑顔が広がる様に」<br><br>
                     　こんな気持ちを込めて、一つ一つ丁寧に手作りしています。<br>
-                    一瞬でも、気持ちが華やいで頂けたらとても嬉しい・・・<br><br>
-                    　<a href="<?php echo esc_url( home_url('05_inekkaec' ) ); ?>">[ オンラインショップのご案内 ... <i class="fas fa-info" style="color: blue;"></i> <i class="fas fa-link extLnkIcon colBlue"></i> ]</a>
+                    　一瞬でも、気持ちが華やいで頂けたらとても嬉しい・・・<br><br>
+                    　　　　　　　　　　<a href="<?php // echo esc_url( home_url('05_inekkaec' ) ); ?>">[ オンラインショップのご案内 ... <i class="fas fa-info" style="color: blue;"></i> <i class="fas fa-link extLnkIcon colBlue"></i> ]</a>
+                  </p>
+                  <div class="uline"></div>
+                  <p>
+                    　手に取った時の「思わず広がる笑顔」<br><br>
+                    　多くの笑顔を造りだし『過疎・高齢化の進む地域を元気づけたい！』<br>
+                    　そんな想いも芽生えて参りました。<br><br>
+                    【刺し子の会】<br>
+                    　週に一度の開催「刺し子・レース・ニット」を「皆で集って」実際に作ってみる。<br>
+                    　地域を元気付けるその一歩、先ずは「コミュニティー形成の一助」となりたい。<br><br>
+                    　熱い想いで地域の活性化に貢献して参ります。
                   </p>
                 </div>
               <?php //else: ?>
@@ -76,6 +105,19 @@ Template Name: 和Plus：オリジナル商品販売・いーねっか！
                     　一瞬でも気持ちが華やいで頂けたら<br>
                     　とても嬉しい・・・<br><br>
                     　<a href="<?php echo esc_url( home_url('05_inekkaec' ) ); ?>">[ オンラインショップのご案内 ... <i class="fas fa-info colBlue"></i> <i class="fas fa-link extLnkIcon colBlue"></i> ]</a>
+                  </p>
+                  <div class="uline"></div>
+                  <p>
+                    　手に取った時の「思わず広がる笑顔」<br><br>
+                    　多くの笑顔を造りだし、<br>
+                    『高齢化・過疎化の進む地域を元気づけたい！』<br>
+                    　そんな想いも芽生えて参りました。<br><br>
+                    【刺し子の会】<br>
+                    　週に一度の開催、「皆で集って」<br>
+                    「刺し子・レース・ニット」を作ってみる。<br><br>
+                    　地域を元気付けるその一歩、<br>
+                    「コミュニティー形成の一助」となりたい。<br><br>
+                    　熱い想いで地域の活性化に貢献して参ります。
                   </p>
                 </div>
               <?php //endif; ?>
