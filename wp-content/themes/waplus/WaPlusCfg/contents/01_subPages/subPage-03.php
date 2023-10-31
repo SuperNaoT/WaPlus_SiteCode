@@ -68,13 +68,14 @@ Template Name: 和Plus：IT WEB ソリューション
                     【想い貯めている構想】を広く周知できる環境創りが大切です。<br><br>
                     　一つ目には「経営支援」に関する基幹的な事業遂行環境、<br>
                     　二つ目には「IT 技術」を駆使しより発展的事業展開を為せる環境。<br><br>
+                    　御社様の【<u>情報システム部門</u>】として、<br>
                     　積極的な事業展開を実現する為の施策を、<br>
                     　様々にご提案させて頂きます。</p>
                   <div class="uline"></div>
                   <div class="itWebDetail">
                     <h2>「経営支援」に関する基幹的な事業遂行環境では、</h2>
                       <p>　　1．会社ドメイン取得・ネットワーク環境構築<br>
-                    　　2．業務資源効率化の為の、各種イントラネットアプリ開発<br>
+                    　　2．業務資源効率化の為の、各種システム開発<br>
                     　　3．戦略的事業展開の為の、各種解析用マクロ開発<br>
                     　　4．IT環境トラブル発生時の、即時対応と現状復帰<br><br>
                     　ビジネスとして成功させる為の基礎と成る部分について、<br>
@@ -87,7 +88,7 @@ Template Name: 和Plus：IT WEB ソリューション
                     　　2．各種 WEBアプリケーション開発<br>
                     　　3．各種 SNS を用いた販売支援<br><br>
                     【想い貯めている構想】の素晴らしさを広く認知して頂く為に、<br>
-                    「IT 技術」を駆使し効果的に結果を求めていく、<br>
+                    「IT 技術」を駆使し効果的な情報発信にて結果を求めていく、<br>
                     　様々に支援をさせて頂きます。</p>
                   </div>      
                 </div>
@@ -101,13 +102,14 @@ Template Name: 和Plus：IT WEB ソリューション
                     　に関する基幹的な事業遂行環境、<br>
                     　二つ目には「IT 技術」<br>
                     　を駆使し発展的事業展開を為す環境。<br><br>
+                    　御社様の【<u>情報システム部門</u>】として、<br>
                     　積極的な事業展開を実現する為の施策を、<br>
                     　様々にご提案させて頂きます。</p>
                   <div class="uline"></div>
                   <div class="itWebDetail">
                     <h2>「経営支援」に関する<br>　基幹的な事業遂行環境では、</h2>
                     <p>　　1．会社ドメイン取得・<br>　　 　　ネットワーク環境構築<br>
-                    　　2．業務資源効率化の為の、<br>　　 　　各種イントラネットアプリ開発<br>
+                    　　2．業務資源効率化の為の、<br>　　 　　各種システム開発<br>
                     　　3．戦略的事業展開の為の、<br>　　 　　各種解析用マクロ開発<br>
                     　　4．IT環境トラブル発生時の、<br>　　 　　即時対応と現状復帰<br><br>
                     　ビジネスとして成功させる<br>
@@ -124,7 +126,7 @@ Template Name: 和Plus：IT WEB ソリューション
                     【想い貯めている構想】の素晴らしさを<br>
                     　広く認知して頂く為に、<br><br>
                     「IT 技術」を駆使し<br>
-                    　効果的に結果を求めていく、<br>
+                    　効果的な情報発信にて結果を求める、<br>
                     　様々に支援をさせて頂きます。</p>
                   </div>      
                 </div>
@@ -153,19 +155,19 @@ Template Name: 和Plus：IT WEB ソリューション
               <div id="cstmName">
                 <?php //if ( !$GB_MOBILE_FLAG ): ?>
                   <div class="forPC">
-                    <h3>　※ 株式会社 ミルバルール 様（甘味処）支援　</h3>
+                    <h3>※ 株式会社 ミルバルール 様（甘味処）支援</h3>
                     <div class="exLkFlg cstLinkFlg">
                       <a href="//www.st-daiku.co.jp/" target="_blank" rel="noopener noreferrer">
-                        <h3 style="margin-top: 0;">　※ 株式会社 齋藤建築 様 支援　<i class="fas fa-external-link-alt extLnkIcon colBlue"></i></h3>
+                        <h3 style="margin-top: 0;">※ 株式会社 齋藤建築 様 支援　<i class="fas fa-external-link-alt extLnkIcon colBlue"></i></h3>
                       </a>
                     </div>
                   </div>
                 <?php //else: ?>
                   <div class="forMB">
-                    <h3>　※ 株式会社 ミルバルール 様</h3>
+                    <h3>※ 株式会社 ミルバルール 様</h3>
                     <div class="exLkFlg cstLinkFlg">
                       <a href="//www.st-daiku.co.jp/" target="_blank" rel="noopener noreferrer">
-                        <h3 style="margin-top: 0;">　※ 株式会社 齋藤建築 様　<i class="fas fa-external-link-alt extLnkIcon colBlue"></i>　</h3>
+                        <h3 style="margin-top: 0;">※ 株式会社 齋藤建築 様　<i class="fas fa-external-link-alt extLnkIcon colBlue"></i></h3>
                       </a>
                     </div>
                   </div>

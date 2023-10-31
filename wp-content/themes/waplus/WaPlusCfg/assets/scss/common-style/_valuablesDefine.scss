@@ -99,12 +99,15 @@ $mbPhiSecHeight: 100vh;
 // ★ サービスのご案内・セクション
 // ***********************************************
 // サービス一覧セクション、高さ
-$mbSvceHeight   : 1250px; // 1300px;    // 160vh
+$mbSvceHeight   : 1250px; // ★1300px;    // 160vh
+$mbSvceHeight   : 1450px; // 1300px
 // サービス一覧セクション、組込画像、高さ
-$mbSvceImgHeight: 1090px; // 1120px;
+$mbSvceImgHeight: 1090px; // ★1120px;
+$mbSvceImgHeight: 1290px;
 // サービス一覧セクション、縦方向アニメバー、高さ
 $vtclBarLgth    : 450px; // 400px 320px 380px;
-$vtclBarLgthMB  : 300px; // 380px;
+$vtclBarLgthMB  : 300px; // ★380px;
+$vtclBarLgthMB  : 380px;
 
 //
 // ***********************************************

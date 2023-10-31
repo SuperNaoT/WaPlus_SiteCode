@@ -59,8 +59,6 @@ document.addEventListener( 'DOMContentLoaded', function() {
     
       // console.log( ` ☛ 画面枚数【${num}】`);
 
-      const wrapperWidth = wrapper.offsetWidth;
-
       // 
       // 横幅を指定
       // １．全横スクロール幅計算（％）
@@ -80,16 +78,10 @@ document.addEventListener( 'DOMContentLoaded', function() {
         // 横スクロールトリガの設定
         scrollTrigger: {
           trigger: area,      //トリガー
+          start: "top top",   //開始位置
+          end: "+=1000",      //終了位置
           pin: true,          //ピン留め・横スクロールの肝
-          scrub: 1,        //スクロール量に応じて動かす true
-          snap: { // スナップスクロールにする
-            snapTo: 1 / ( panels.length - 1 ), // スナップで移動させる位置
-            duration: {min: .4, max: .6}, // スナップで移動する際の遅延時間
-            ease: "none" // easing
-          },
-          end: () => "+=" + wrapperWidth // アニメーションの終了タイミング
-          // start: "top top",   //開始位置
-          // end: "+=1000",      //終了位置
+          scrub: true,        //スクロール量に応じて動かす
         }
       });
       // ***************************************

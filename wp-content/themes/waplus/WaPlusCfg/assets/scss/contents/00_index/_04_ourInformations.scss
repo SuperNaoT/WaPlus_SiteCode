@@ -20,7 +20,7 @@
     // rellax効果、画像位置が悪い時は、ここを調整する！
     @include mquery( "mb" ) {
       // @include style_ourPfmRellaxImageMB( 195px, 20%, 60%, 200px, -420% );
-      @include style_ourPfmRellaxImageMB( 195px, 20%, 60%, 200px, -80% );
+      @include style_ourPfmRellaxImageMB( 195px, 20%, 60%, 200px, -80%, -10% );   // -80%
     }
     @include mquery( "pc" ) {
       // @include style_ourPfmRellaxImage( 260px, 60%, 35%, 450px, -60% );

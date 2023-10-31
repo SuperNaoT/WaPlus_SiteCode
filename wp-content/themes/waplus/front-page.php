@@ -7,7 +7,7 @@
   // ★ 【global：グローバル変数】の取込み
   // *******************************************************
   // *******************************************************
-  get_template_part( 'WaPlusCfg/commpn-php/globalVariables' );
+  get_template_part( 'WaPlusCfg/common-php/globalVariables' );
 
   // // 
   // // 当該固定ページ種別設定
@@ -52,7 +52,7 @@
         // 
         // *******************************************************
         // *******************************************************
-        // ★ 【株式会社和Plus ご提供サービス・事業説明セクション】の取込み
+        // ★ 【株式会社和Plus 企業ポリシー説明】の取込み
         // *******************************************************
         // *******************************************************
         // get_template_part( 'WaPlusCfg/contents/00_index/01_pageTopSection', null, $params );
@@ -74,7 +74,7 @@
       <!-- ****************************************************** -->
       <section id="sideScrollArea">
         <div class="sideScrollArea js-sideScrollArea">
-          <div class="allPanelWrapper js-allPanelWrapper">
+          <div class="allPanelWrapper js-allPanelWrapper" id="wrapper">
 
             <?php
               // 

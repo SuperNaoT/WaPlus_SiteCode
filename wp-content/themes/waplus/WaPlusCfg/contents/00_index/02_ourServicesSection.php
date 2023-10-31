@@ -48,11 +48,15 @@
               <!-- <p class="doubleLine">■ IT WEB Solutions</p> -->
               <h3 class="doubleLine">■ IT WEB Solutions</h3>
               <ul>
-                <li class="pcLabel">WEB アプリケーション開発</li>
-                <li class="mbLabel">WEB アプリ開発</li>
+                <li>情報システム部門運営支援</li>
+                <li>各種システム開発</li>
+                <!-- <li class="pcLabel">WEB アプリケーション開発</li>
+                <li class="mbLabel">WEB アプリ開発</li> -->
                 <li>ホームページ開設</li>
                 <li>各種マクロ開発</li>
                 <li>パソコントラブル対応</li>
+                <!-- <li class="pcLabel">情報システム部門運営支援</li>
+                <li class="mbLabel">情シス運営</li> -->
               </ul>
               <a href="<?php echo esc_url( home_url('03_itwebs') ); ?>" class="btn andMoreBtn"> and more...</a>
             </div>
