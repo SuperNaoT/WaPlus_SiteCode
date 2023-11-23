@@ -160,6 +160,36 @@ document.addEventListener( 'DOMContentLoaded', function() {
         }
     }
 
+        
+    // 
+    // ■ 表示画像の事前取込み機能を実装
+    // ? 余り意味ないかな？
+    // 
+    if ( document.getElementById("wpThemeDir") != null )  {
+      var checkID = document.getElementById('wpThemeDir');
+      var imgPath = checkID.getAttribute('themeDir');
+
+      // alert(imgPath);  
+
+      var preLoadImages = [
+        imgPath + 'WaPlusCfg/Images/bgImage_SakuraS.jpg',
+        imgPath + 'WaPlusCfg/Images/DSC_Ohtemachi.jpg',  
+        imgPath + 'WaPlusCfg/Images/DSC_OhtemachiS.jpg',  
+        imgPath + 'WaPlusCfg/Images/SunShine.jpg',  
+        imgPath + 'WaPlusCfg/Images/ITWebSol/macOnDeskS.jpg',  
+        imgPath + 'WaPlusCfg/Images/i-nekka/i-nekka-roses.jpg', 
+        imgPath + 'WaPlusCfg/Images/ACestus/ACestus-500x350.jpg', 
+        imgPath + 'WaPlusCfg/Images/ACestus/ACestus-bancok1M.jpg', 
+        imgPath + 'WaPlusCfg/Images/ACestus/ACestus-bancok1Px.jpg', 
+      ];
+      for( i=0; i<preLoadImages.length; i++ )  {
+        var img = document.createElement('img');
+            img.src = preLoadImages[i];
+      }
+    }
+
+
+
     // 
     //「cookie」への当ページ表示状況の設定
     // ・初期ロード時のみ、サイトロード画面を表示する

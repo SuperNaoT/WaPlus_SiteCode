@@ -85,31 +85,6 @@ if ( ! is_admin() ) {
 
       if ( is_home() )  {
 
-        // // jQueryの読み込み
-        // // ハンドル名（識別要の文字列）.
-        // $handle = 'jQuery360';
-        // // 追加したいjQueryのURL.
-        // $src = "//ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js";
-        // // JavaScriptファイルの取込み実行
-        // wp_enqueue_script( $handle, $src, $deps, $ver );
-
-        // // スクロールスピード制御ライブラリの読み込み
-        // // ハンドル名（識別要の文字列）.
-        // $handle = 'jQ_easeScroll';
-        // // 追加したいjQueryのURL.
-        // $src = get_template_directory_uri().'/WaPlusCfg/js/contents/front-page/jquery.easeScroll.js';
-        // // JavaScriptファイルの取込み実行
-        // wp_enqueue_script( $handle, $src, $deps, $ver );
-
-        // // jQueryの読み込み
-        // // ハンドル名（識別要の文字列）.
-        // $handle = 'jQ_scrollSpeedCtr';
-        // // 追加したいjQueryのURL.
-        // // $src = get_template_directory_uri().'/WaPlusCfg/js/contents/front-page/jQ_scrollSpeedCtr.min.js';
-        // $src = get_template_directory_uri().'/WaPlusCfg/js/contents/front-page/jQ_scrollSpeedCtr.js';
-        // // JavaScriptファイルの取込み実行
-        // wp_enqueue_script( $handle, $src, $deps, $ver );
-
         // fontawesomeアイコン表示用Scriptの読み込み
         // ハンドル名（識別要の文字列）.
         $handle = 'sideScroll_js';

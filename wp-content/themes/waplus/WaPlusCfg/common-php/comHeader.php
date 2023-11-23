@@ -165,10 +165,11 @@
     <!-- ★【重要】WORDPRESSのお約束：WORDPRESS利用のJavascript/PHP等の取込み（WORDPRESS管理バー表示等々） -->
     <?php wp_head(); ?>
 	</head>
-
+  
 	<!--【body_class()】 -->
 	<!-- ★ WordPress にて当該ページ種別に応じたクラスを「<body>タグ」に追加 -->
-	<body class="bodyLock <?php echo $galleryFlg; ?> <?php echo $GB_DEVICE_KIND; ?>" <?php body_class(); ?>> <?php wp_body_open(); ?>
+	<!-- <body class="bodyLock <?php echo $galleryFlg; ?> <?php echo $GB_DEVICE_KIND; ?>" <?php body_class(); ?>> <?php wp_body_open(); ?> -->
+	<body id="wpThemeDir" themeDir="<?php echo esc_url( get_template_directory_uri()); ?>/" class="bodyLock <?php echo $galleryFlg; ?> <?php echo $GB_DEVICE_KIND; ?>" <?php body_class(); ?>> <?php wp_body_open(); ?>
 
     <!-- Google Tag Manager (noscript) -->
     <noscript>
@@ -195,6 +196,7 @@
 		?>
 
   <div class="mask" id="mask"></div>
+  <!-- <div class="mask" id="mask" targetDir="<?php //echo esc_url( get_template_directory_uri()); ?>/"></div> -->
 
   <!--  -->
   <!-- 和Plus ホームページ・トップページ表示時のみ、ロード待ち画面表示 -->
